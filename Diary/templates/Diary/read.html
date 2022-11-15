@@ -1,0 +1,20 @@
+{% extends 'diary/index.html' %}
+
+{% block content %}
+
+<div class="context">
+    <h3> Date: <i>{{ journal.date }}</i></h3>
+    <h3>Title : {{ journal.title }}</h3>
+    <small><i><b>Mood: {{ journal.mood }}</b></i></small>
+    <br>
+    
+    <h3>Content:</h3>
+    <p>{{ journal.story }}</p>
+
+
+</div>
+
+
+
+
+{% endblock content %}

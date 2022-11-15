@@ -1,0 +1,39 @@
+{% extends 'diary/index.html' %}
+
+{% block content %}
+
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <div class="datew">
+        <br>
+        {{ form.date.label_tag }} <br>
+        {{ form.date }}
+    </div>
+
+    <div class="fieldWrapper">
+        <br>
+        {{ form.mood.label_tag }} <br>
+        {{ form.mood }}
+    </div>
+
+    <div class="fieldWrapper">
+        <br>
+        {{ form.title.label_tag }} <br>
+        {{ form.title }}
+    </div>
+
+    <div class="fieldWrapper">
+        <br>
+        {{ form.story.label_tag }} <br>
+        {{ form.story }}
+    </div>
+    
+    <br>
+
+    
+    <input type="submit" value="submit">
+</form>
+
+{% endblock content %}

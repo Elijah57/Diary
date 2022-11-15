@@ -1,0 +1,37 @@
+{% extends 'diary/index.html' %}
+
+
+
+{% block content %}
+
+
+
+<h2>Write a  diary today :)</h2>
+
+<button class="btn btn-outline-info bg-dark" type="submit"><a class="tap" href="{% url 'create' %}">write</a></button>
+<br><br>
+
+<h2>Diaries</h2>
+
+{% for story in journals %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <ul>
+                <li class="card">
+                    <small class="text-muted"> written {{ story.date }}   ({{ story.date|timesince }} ago)</small>
+                    <h3><a href="{% url 'read' story.id %}" class="article-title">{{ story.title }}</a></h3> 
+                    <small class="text-muted"><i><b>mood : {{ story.mood }}</b></i></small> <br>
+                    <a href="{% url 'edit' story.id %}">Edit</a> &nbsp; &nbsp; <a href="{% url 'delete' story.id %}">Delete</a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</article>
+
+
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<h1>Register a project</h1>
+
+<form action="add/" method="post">
+    {% csrf_token %}
+    Firstname: <br>
+    <input type="text" name="fname">
+    <br><br>
+    Lastname : <br>
+    <input type="text" name="lname">
+    <br><br>
+    Sex: (tick the box if Male)<br>
+    <input  type="checkbox" name="sex">
+    <br><br>
+    Email address:
+    <br>
+    <input type="email" name="mail">
+    <br><br>
+    Project name:
+    <br>
+    <input type="text" name="project_name">
+    <br><br>
+    Project Description:
+    <br>
+    <input type="text" name="description">
+    <br><br>
+    Created_at: <br>
+    <input type="date" name="create">
+    <br><br>
+    <input type="submit" value="Register">
+
+</form>
+
+
+{% endblock content%}
